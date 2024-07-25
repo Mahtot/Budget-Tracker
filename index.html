@@ -1,31 +1,113 @@
 <!doctype html>
-
-<html>
-
+<html lang="en">
 
 <head>
-
-  <meta charset="UTF-8">
-  <title>Budget-Tracker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="./output.css" rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
+    <meta charset="UTF-8">
+    <title>Budget Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="./app.js"></script>
 </head>
 
-<body>
+<body class="bg-gradient-to-r from-[#040046] via-[#433ccc] to-[#092e43] min-h-screen flex flex-col">
+    <!-- Header content -->
+    <header class="flex flex-row items-center justify-center p-4 fixed top-0 left-0 w-full shadow-2xl z-40 text-[14px] sm:text-xl bg-[#0a0475]">
+        <a href="#" class="font-montserrat text-[#59A6D4] mr-auto">
+            Budget Tracker
+        </a>
+        <nav class="ml-auto">
+          <button class="text-white bg-[#433ccc] px-2 sm:px-5 py-2 hover:opacity-75 transition-all duration-500 ">
+              My Transactions
+          </button>
+      </nav>
 
-  <h1 class="text-3xl font-bold underline">
+    </header>
 
-    Hello world!
+    <!-- Main content -->
+    <main class="p-5 mt-[200px] mx-auto  w-[90%] md:w-[50%] flex flex-col rounded-sm justify-center items-center  gap-10 ">
+      <div class="p-5 mx-auto 300:bg-[#6568F1] shadow-xl w-[100%]  flex flex-col rounded-sm justify-center items-center  gap-10 "> 
+        <div class="flex flex-row gap-2 sm:gap-5 justify-center text-[14px] sm:text-xl">
+            <button class="bg-[#433ccc] text-white px-2 sm:px-5 py-2 rounded-sm transition-all duration-500">
+                Balance
+            </button>
+            <button class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
+              Income
+            </button>
+            <button class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
+              Expenses
+          </button>
+        </div>
+        <div>
+            <h2 class="font-montserrat text-[26px] sm:text-[36px] font-bold">
+              $556
+            </h2>
+        </div>
+      </div>
 
-  </h1>
+      <!-- Task addition section -->
+      <div class="flex flex-col w-[100%] items-center gap-10 mt-[50px] font-montserrat">
+        <div class="flex flex-row items-center">
+            <button class="text-[18px] sm:text-2xl text-[#59A6D4] hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]">
+                New Transaction
+            </button>
+            <span class="mx-4 text-2xl sm:text-2xl text-white">|</span>
+            <button class="text-[18px] sm:text-2xl hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]">
+                Old Transactions
+            </button>
+        </div>
+    
+        <form class="flex flex-col w-[100%] font-outfit gap-5">
+            <input type="text"
+                   placeholder="Description"
+                   required
+                   class="bg-inherit"/>
+            <input type="number"
+                   min="1"
+                   placeholder="Amount"
+                   required/>
+    
+            <div class="flex items-center gap-4 mt-5 text-[#d7d4d4]">
+                <label class="flex items-center flex-row gap-2">
+                    <input type="radio" name="transactionType" value="income" required class="radio-btn"/>
+                    <span>Incoming</span>
+                </label>
+                <label class="flex items-center flex-row gap-2">
+                    <input type="radio" name="transactionType" value="expense" class="radio-btn"/>
+                    <span>Outgoing</span>
+                </label>
+            </div>
+    
+            <button type="submit"
+                    class="bg-[#6568F1] text-[#f7ecec] px-4 py-2 rounded hover:opacity-75 transition-opacity duration-500 font-outfit mt-10">
+                Add Transaction
+            </button>
+        </form>
+    </div>
+    
+    </main>
 
-  <h2 class="bg-purple-600">My second one</h2>
+    <!-- Footer content -->
+    <footer class="flex flex-col gap-5 mt-[100px] text-[14px] sm:text-sm">
+      <div class="flex justify-center gap-4">
+        <a href="https://x.com/MahtotG" class="text-[#59A6D4] hover:underline">Twitter</a>
+        <a href="https://www.linkedin.com/in/mahtot-gher-57860a274/" class="text-[#59A6D4] hover:underline">LinkedIn</a>
+        <a href="https://github.com/Mahtot" class="text-[#59A6D4] hover:underline">GitHub</a>
+    </div>
+      <div class="text-center">
+          <p class="text-white" >© 2024 
+            <span><a href="mailto:mahtotgher13@gmail.com" class="text-[#59A6D4] hover:underline">Mahtot</a>
+        </span>. All Rights Reserved.</p>
+        
+      </div> 
+      <div class="bg-[#040046] p-3 ">
+          
+      </div>
+  </footer>
+  
 
+    
 </body>
 
 </html>
-<!-- npx tailwindcss -i ./styles.css -o ./output.css --watch -->
