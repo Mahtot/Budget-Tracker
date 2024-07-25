@@ -8,7 +8,6 @@
     <link href="./output.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <script src="./app.js"></script>
 </head>
 
 <body class="bg-gradient-to-r from-[#040046] via-[#433ccc] to-[#092e43] min-h-screen flex flex-col">
@@ -18,7 +17,8 @@
             Budget Tracker
         </a>
         <nav class="ml-auto">
-          <button class="text-white bg-[#433ccc] px-2 sm:px-5 py-2 hover:opacity-75 transition-all duration-500 ">
+          <button class="text-white bg-[#433ccc] px-2 sm:px-5 py-2 hover:opacity-75 transition-all duration-500 "
+                  id="my-transactions">
               My Transactions
           </button>
       </nav>
@@ -26,22 +26,24 @@
     </header>
 
     <!-- Main content -->
-    <main class="p-5 mt-[200px] mx-auto  w-[90%] md:w-[50%] flex flex-col rounded-sm justify-center items-center  gap-10 ">
+    <main class="p-5 mt-[200px] mx-auto  w-[90%] 994:w-[50%] flex flex-col rounded-sm justify-center items-center  gap-10 ">
       <div class="p-5 mx-auto 300:bg-[#6568F1] shadow-xl w-[100%]  flex flex-col rounded-sm justify-center items-center  gap-10 "> 
         <div class="flex flex-row gap-2 sm:gap-5 justify-center text-[14px] sm:text-xl">
-            <button class="bg-[#433ccc] text-white px-2 sm:px-5 py-2 rounded-sm transition-all duration-500">
-                Balance
-            </button>
-            <button class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
+          <button id="balanceBtn" class="active-button hover:bg-[#433ccc]  text-white px-2 sm:px-5 py-2 rounded-sm transition-all duration-500">
+              Balance
+          </button>
+          <button id="incomeBtn" class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
               Income
-            </button>
-            <button class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
+          </button>
+          <button id="expenseBtn" class="text-white hover:bg-[#433ccc] px-2 sm:px-5 py-2 transition-all duration-500">
               Expenses
           </button>
-        </div>
+      </div>
+      
         <div>
-            <h2 class="font-montserrat text-[26px] sm:text-[36px] font-bold">
-              $556
+            <h2 class="font-montserrat text-[26px] sm:text-[36px] font-bold"
+                id="value">
+              $0
             </h2>
         </div>
       </div>
@@ -49,23 +51,28 @@
       <!-- Task addition section -->
       <div class="flex flex-col w-[100%] items-center gap-10 mt-[50px] font-montserrat">
         <div class="flex flex-row items-center">
-            <button class="text-[18px] sm:text-2xl text-[#59A6D4] hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]">
+            <button class="active-transaction text-[16px] sm:text-2xl  hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]"
+                    id="newTransaction">
                 New Transaction
             </button>
             <span class="mx-4 text-2xl sm:text-2xl text-white">|</span>
-            <button class="text-[18px] sm:text-2xl hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]">
+            <button class="text-[16px] sm:text-2xl hover:text-[#59A6D4] transition-all duration-500 border-b-2 border-transparent hover:border-[#59A6D4]"
+                    id="oldTransaction">
                 Old Transactions
             </button>
         </div>
     
-        <form class="flex flex-col w-[100%] font-outfit gap-5">
+        <form class="flex flex-col w-[100%] font-outfit gap-5"
+              id="form">
             <input type="text"
                    placeholder="Description"
                    required
+                   id="reason"
                    class="bg-inherit"/>
             <input type="number"
                    min="1"
                    placeholder="Amount"
+                   id="amount"
                    required/>
     
             <div class="flex items-center gap-4 mt-5 text-[#d7d4d4]">
@@ -84,6 +91,16 @@
                 Add Transaction
             </button>
         </form>
+
+        <div id="old-transaction-content" 
+             class="hide-transaction flex flex-col items-center gap-4 mt-5 text-[#d7d4d4]">
+
+
+
+
+    
+        </div>
+
     </div>
     
     </main>
@@ -107,7 +124,8 @@
   </footer>
   
 
-    
+  <script src="./app.js"></script>
+
 </body>
 
 </html>

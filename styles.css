@@ -51,6 +51,10 @@ input{
 button{
     transition: all 0.5;
 }
+
+.active-button{
+    background-color: #433ccc; /* Change to your desired color */
+}
 input:focus{
     border-bottom: 2px solid #040046;
 
@@ -71,4 +75,71 @@ input[type=number]::-webkit-outer-spin-button {
 }
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+/* transactions visibility */
+
+.transaction-show{
+    display: block;
+}
+
+.hide-transaction{
+    display: none;
+}
+
+.active-transaction{
+    color:#59A6D4;
+    border-bottom: 2px solid;
+}
+
+/* Styles for no transactions message */
+.no-transactions-message {
+    color: #d7d4d4;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styles for individual transaction items */
+.transaction-item {
+    border-bottom: 2px solid #040046;
+    color: #333;
+    width: 70vw;
+}
+
+.transaction-item:nth-child(even) {
+    /* background-color: #f9f9f9; */
+}
+
+.transaction-detail {
+    flex: 1;
+    color: white;
+    text-align: center;
+}
+
+.transaction-item .transaction-detail {
+    padding: 0 10px;
+}
+
+.transaction-item .transaction-detail.text-green-500 {
+    color: #4caf50;
+    font-size: 26px;
+}
+
+.transaction-item .transaction-detail.text-red-500 {
+    color: #f44336;
+    font-size: 26px;
+
+}
+
+.del-btn{
+    background-color: red;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+}
+
+.del-btn:hover{
+    opacity:8;
+    transition: all 0.5s;
 }
