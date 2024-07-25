@@ -456,8 +456,6 @@ video {
   font-display: swap;
 
   src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
-
-  /* Use 'truetype' for .ttf files */
 }
 
 @font-face {
@@ -793,10 +791,6 @@ video {
   font-size: 14px;
 }
 
-.text-\[16px\] {
-  font-size: 16px;
-}
-
 .text-\[26px\] {
   font-size: 26px;
 }
@@ -858,7 +852,6 @@ html {
 }
 
 main{
-  /* scale:0; */
   animation: mainAnimation 1s ease-in-out ;
 }
 
@@ -887,7 +880,6 @@ button{
 
 .active-button{
   background-color: #433ccc;
-  /* Change to your desired color */
 }
 
 input:focus{
@@ -931,8 +923,8 @@ input[type=number] {
 
 .no-transactions-message {
   color: #d7d4d4;
-  font-size: 18px;
-  text-align: center;
+  font-size: 16px;
+  text-align: left;
   padding: 20px;
 }
 
@@ -944,14 +936,10 @@ input[type=number] {
   width: 70vw;
 }
 
-.transaction-item:nth-child(even) {
-  /* background-color: #f9f9f9; */
-}
-
 .transaction-detail {
   flex: 1;
   color: white;
-  text-align: center;
+  font-size: 15px;
 }
 
 .transaction-item .transaction-detail {
@@ -975,9 +963,85 @@ input[type=number] {
   border-radius: 5px;
 }
 
-.del-btn:hover{
-  opacity:8;
+/* Styles for transaction items */
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap:10px;
+  overflow-x: auto;
+  justify-content: space-between;
+}
+
+.transaction-detail {
+  flex: 1;
+  text-align: center;
+}
+
+.edit-btn {
+  background-color: #fbbf24;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.edit-btn:hover {
+  background-color: #f59e0b;
   transition: all 0.5s;
+}
+
+.del-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.del-btn:hover {
+  background-color: #dc2626;
+}
+
+@media screen and (max-width:400px) {
+  .no-transactions-message {
+    font-size: 14px;
+  }
+
+  .transaction-detail,
+    .del-btn,
+    .edit-btn,
+    .transaction-id {
+    font-size: 13px;
+  }
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+
+.transaction-item::-webkit-scrollbar {
+  height: 8px;
+}
+
+.transaction-item::-webkit-scrollbar-thumb {
+  background-color: #040046 ;
+  border-radius: 10px;
+}
+
+.transaction-item::-webkit-scrollbar-thumb:hover {
+  background-color: #433ccc;
+}
+
+.transaction-item::-webkit-scrollbar-track {
+  background-color: #433ccc;
+  border-radius: 10px;
+}
+
+/* Custom scrollbar for Firefox */
+
+.transaction-item {
+  scrollbar-width: thin;
+  scrollbar-color: #040046 #433ccc;
+}
+
+/* Hide scrollbar for Edge and IE */
+
+.transaction-item {
+  -ms-overflow-style: none;
 }
 
 .hover\:border-\[\#59A6D4\]:hover {
@@ -1045,3 +1109,4 @@ input[type=number] {
     width: 50%;
   }
 }
+
